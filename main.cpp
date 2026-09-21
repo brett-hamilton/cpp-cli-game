@@ -2,4 +2,18 @@
 
 using namespace std;
 
-int main() { cout << "Hello World!\n"; }
+string DrawMenu() {
+  string pic = ".------.\n"
+               "| .------.\n"
+               "| | .------.\n"
+               "| | |      |\n"
+               "| | |      |\n"
+               "| | |      |\n"
+               "`-| |      |\n"
+               "  `-|      |\n"
+               "    `------`\n";
+
+  return pic;
+}
+
+int main() { cout << "Play Game\n" << DrawMenu() << "\n"; }
