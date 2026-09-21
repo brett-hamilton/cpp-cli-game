@@ -1,0 +1,8 @@
+# MacOS specific
+.DS_Store
+
+# Build dir
+/build*
+
+# Temp files
+*~
