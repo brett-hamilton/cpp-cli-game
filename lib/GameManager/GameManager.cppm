@@ -13,7 +13,7 @@ export void DrawMenu() {
                 "| | .------------.\n"
                 "| | |            |\n"
                 "| | |            |\n"
-                "| | |            |   Press 'Enter'\n"
+                "| | |   WARISH   |   Press 'Enter'\n"
                 "| | |            |      to Play\n"
                 "| | |            |\n"
                 "| | |            |\n"
