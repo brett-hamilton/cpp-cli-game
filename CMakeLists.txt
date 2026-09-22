@@ -12,5 +12,6 @@ target_sources(Game
 add_subdirectory(lib)
 
 target_link_libraries(Game PRIVATE GameManager)
+target_link_libraries(Game PRIVATE Utilities)
 
 target_compile_features(Game PUBLIC cxx_std_23)
