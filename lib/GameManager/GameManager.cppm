@@ -7,6 +7,8 @@ export module GameManager;
 
 using namespace std;
 
+export bool isGameOver = false;
+
 export void DrawMenu() {
   string menu = ".------------.\n"
                 "| .------------.\n"
