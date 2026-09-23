@@ -7,8 +7,10 @@ import Utilities;
 using namespace std;
 
 int main() {
+  GameManager *gm = new GameManager();
+
   // Display menu and get input - "enter" to play
-  DrawMenu();
+  gm->DrawMenu();
   string input;
   getline(cin, input);
 
@@ -17,13 +19,13 @@ int main() {
     return 0;
   }
 
-  while (!isGameOver) {
+  while (gm->isGameOver) {
     // TODO: Deal cards to player 1 and 2
 
     // TODO: Resolve turn
 
     // ** TEMP PLACEHOLDER BEHAVIOR**
-    isGameOver = true;
+    gm->isGameOver = true;
   }
 
   // End game screen

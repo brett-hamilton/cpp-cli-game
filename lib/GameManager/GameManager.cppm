@@ -7,23 +7,29 @@ export module GameManager;
 
 using namespace std;
 
-export bool isGameOver = false;
+export class GameManager {
+public:
+  bool isGameOver;
 
-export void DrawMenu() {
-  string menu = ".------------.\n"
-                "| .------------.\n"
-                "| | .------------.\n"
-                "| | |            |\n"
-                "| | |   WARISH   |   Press 'Enter'\n"
-                "| | |        .   |      to Play\n"
-                "| | |       / \\  |\n"
-                "| | |      /  /  |\n"
-                "| | |     /  /   |\n"
-                "| | |  ._/__/_.  |\n"
-                "| | |  |_._.__|  |\n"
-                "`-| |   /_/      |\n"
-                "  `-|            |\n"
-                "    `------------`\n";
+  // Default Constructor
+  GameManager() : isGameOver(false) {};
 
-  cout << menu;
-}
+  void DrawMenu() {
+    string menu = ".------------.\n"
+                  "| .------------.\n"
+                  "| | .------------.\n"
+                  "| | |            |\n"
+                  "| | |   WARISH   |   Press 'Enter'\n"
+                  "| | |        .   |      to Play\n"
+                  "| | |       / \\  |\n"
+                  "| | |      /  /  |\n"
+                  "| | |     /  /   |\n"
+                  "| | |  ._/__/_.  |\n"
+                  "| | |  |_._.__|  |\n"
+                  "`-| |   /_/      |\n"
+                  "  `-|            |\n"
+                  "    `------------`\n";
+
+    cout << menu;
+  }
+};
