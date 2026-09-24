@@ -3,6 +3,8 @@ module;
 #include <iostream>
 #include <string>
 
+import Deck;
+
 export module GameManager;
 
 using namespace std;
@@ -12,9 +14,9 @@ public:
   bool isGameOver;
 
   // Default Constructor
-  GameManager() : isGameOver(false) {};
+  GameManager() : isGameOver(false), deck(new Deck()) {};
 
-  void DrawMenu() {
+  void drawMenu() {
     string menu = ".------------.\n"
                   "| .------------.\n"
                   "| | .------------.\n"
@@ -32,4 +34,9 @@ public:
 
     cout << menu;
   }
+
+  void dealCards() {}
+
+private:
+  Deck *deck;
 };

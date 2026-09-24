@@ -10,7 +10,7 @@ int main() {
   GameManager *gm = new GameManager();
 
   // Display menu and get input - "enter" to play
-  gm->DrawMenu();
+  gm->drawMenu();
   string input;
   getline(cin, input);
 
@@ -21,6 +21,7 @@ int main() {
 
   while (gm->isGameOver) {
     // TODO: Deal cards to player 1 and 2
+    gm->dealCards();
 
     // TODO: Resolve turn
 
