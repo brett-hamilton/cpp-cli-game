@@ -29,7 +29,9 @@ int main() {
     gm->isGameOver = true;
   }
 
-  // End game screen
+  // TODO: End game screen
+  delete gm; // deallocate
+  gm = nullptr;
 
   return 0;
 }
