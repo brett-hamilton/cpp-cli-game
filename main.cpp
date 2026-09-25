@@ -21,7 +21,7 @@ int main() {
 
   while (gm->isGameOver) {
     // TODO: Deal cards to player 1 and 2
-    gm->dealCards();
+    // gm->deal();
 
     // TODO: Resolve turn
 

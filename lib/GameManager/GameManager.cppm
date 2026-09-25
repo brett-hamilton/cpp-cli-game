@@ -4,6 +4,7 @@ module;
 #include <string>
 
 import Deck;
+import Card;
 
 export module GameManager;
 
@@ -35,8 +36,10 @@ public:
     cout << menu;
   }
 
-  void dealCards() {}
+  // void deal() { deck->dealCards(player1, player2) }
 
 private:
   Deck *deck;
+  std::vector<Card> player1;
+  std::vector<Card> player2;
 };
