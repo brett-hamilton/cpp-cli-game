@@ -30,9 +30,10 @@ private:
     }
 
     for (const auto &c : cards) {
-      cout << c << " | ";
+      cout << c << "\n";
     }
-    cout << "\n";
+
+    cout << "___ SHUFFLE ___\n";
 
     shuffle();
   }
@@ -50,9 +51,7 @@ private:
     }
 
     for (const auto &c : cards) {
-      cout << c << " | ";
+      cout << c << "\n";
     }
-
-    cout << "\n";
   }
 };

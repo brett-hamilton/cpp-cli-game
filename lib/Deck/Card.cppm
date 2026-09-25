@@ -11,7 +11,7 @@ public:
   Card(CardType t) : type(t) { setStats(); };
 
   friend std::ostream &operator<<(std::ostream &os, const Card &card) {
-    os << "Card Max Attack: " << card.maxAttack;
+    os << "Card: " << card.type;
 
     return os;
   }
