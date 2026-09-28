@@ -15,7 +15,7 @@ int main() {
   getline(cin, input);
 
   if (!input.empty()) {
-    cout << "Exiting...";
+    cout << "Exiting...\n";
     return 0;
   }
 
@@ -23,6 +23,16 @@ int main() {
 
   while (!gm->isGameOver) {
     gm->playHand();
+
+    if (!gm->isGameOver) {
+      cout << "< Press Enter to Continue >\n";
+      getline(cin, input);
+
+      if (!input.empty()) {
+        cout << "Exiting...\n";
+        return 0;
+      }
+    }
   }
 
   // TODO: End game screen
