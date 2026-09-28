@@ -16,7 +16,13 @@ export class Deck {
 public:
   Deck() { generateCards(); };
 
-  // void dealCards(std::vector<Card> &c1, std::vector<Card> &c2, ) {}
+  void dealCards(std::vector<Card> &c1, std::vector<Card> &c2) {
+    for (int i = 0; i != cards.size(); i += 2) {
+      c1.push_back(std::move(cards[i]));
+      c2.push_back(std::move(cards[i + 1]));
+    }
+    cards.clear();
+  }
 
 private:
   std::vector<Card> cards;
@@ -28,13 +34,6 @@ private:
         cards.emplace_back(static_cast<CardType>(i));
       }
     }
-
-    for (const auto &c : cards) {
-      cout << c << "\n";
-    }
-
-    cout << "___ SHUFFLE ___\n";
-
     shuffle();
   }
 
@@ -48,10 +47,6 @@ private:
       std::uniform_int_distribution<int> distrib(0, i);
       random = distrib(gen);
       std::swap(cards[i], cards[random]); // swap cards
-    }
-
-    for (const auto &c : cards) {
-      cout << c << "\n";
     }
   }
 };

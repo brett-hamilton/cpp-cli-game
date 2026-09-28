@@ -36,7 +36,11 @@ public:
     cout << menu;
   }
 
-  // void deal() { deck->dealCards(player1, player2) }
+  void deal() {
+    deck->dealCards(player1, player2);
+    cout << "player1 card count == " << player1.size() << "\n";
+    cout << "player2 card count == " << player2.size() << "\n";
+  }
 
 private:
   Deck *deck;
