@@ -19,14 +19,10 @@ int main() {
     return 0;
   }
 
+  gm->deal();
+
   while (!gm->isGameOver) {
-    // TODO: Deal cards to player 1 and 2
-    gm->deal();
-
-    // TODO: Resolve turn
-
-    // ** TEMP PLACEHOLDER BEHAVIOR**
-    gm->isGameOver = true;
+    gm->playHand();
   }
 
   // TODO: End game screen

@@ -7,6 +7,10 @@ export module Card;
 
 export class Card {
 public:
+  int maxAttack;
+  int minAttack;
+  int defense;
+
   // Constructor
   Card(CardType t) : type(t) { setStats(); };
 
@@ -18,9 +22,6 @@ public:
 
 private:
   CardType type;
-  int maxAttack;
-  int minAttack;
-  int defense;
 
   void setStats() {
     switch (type) {
