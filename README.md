@@ -16,6 +16,7 @@ A simple terminal card game similar to War. The main purpose of this project is 
 
 - `macOS` - there are certain terminal commands like clear screen and changing text color that rely on ANSI escape codes
 - `cmake`
+- `ninja`
 
 ## Installation
 
@@ -31,7 +32,7 @@ Step-by-step instructions to get your development environment running:
    ```
 3. Use CMake to build the project:
    ```bash
-   cmake -B build
+   cmake -B build -DCMAKE_CXX_COMPILER=/path/to/your/c++/compiler/of/choice -G Ninja
    cmake --build build
    ```
 4. Start the program:
