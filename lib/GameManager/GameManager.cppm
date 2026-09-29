@@ -117,10 +117,10 @@ private:
 
     cout << "          Player 2  \n";
     cout << "        ------------\n";
-    cout << "-       Card: " << player2[0].type << "\n";
-    cout << "- Min Attack: " << player2[0].minAttack << "\n";
-    cout << "- Max Attack: " << player2[0].maxAttack << "\n";
-    cout << "-    Defense: " << player2[0].defense << "\n";
+    cout << "        Card: " << player2[0].type << "\n";
+    cout << "  Min Attack: " << player2[0].minAttack << "\n";
+    cout << "  Max Attack: " << player2[0].maxAttack << "\n";
+    cout << "     Defense: " << player2[0].defense << "\n";
     cout << "     *** Rolled Attack ***\n";
     cout << "            *** " << p2Attack << " ***" << "\n\n";
   }
