@@ -22,10 +22,12 @@ int main() {
   gm->deal();
 
   while (!gm->isGameOver) {
+    ClearScreen();
     gm->playHand();
 
     if (!gm->isGameOver) {
-      cout << "< Press Enter to Continue >\n";
+      cout << SetTextColor("red") << " < Press Enter to Continue >"
+           << ResetTextColor() << "\n";
       getline(cin, input);
 
       if (!input.empty()) {

@@ -7,6 +7,7 @@ export module Card;
 
 export class Card {
 public:
+  CardType type;
   int maxAttack;
   int minAttack;
   int defense;
@@ -21,8 +22,6 @@ public:
   }
 
 private:
-  CardType type;
-
   void setStats() {
     switch (type) {
     case CardType::rat:

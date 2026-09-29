@@ -1,10 +1,13 @@
 module;
 
+#include "CardType.h"
 #include <iostream>
+#include <random>
 #include <string>
 
 import Deck;
 import Card;
+import Utilities;
 
 export module GameManager;
 
@@ -36,11 +39,7 @@ public:
     cout << menu;
   }
 
-  void deal() {
-    deck->dealCards(player1, player2);
-    cout << "player1 card count == " << player1.size() << "\n";
-    cout << "player2 card count == " << player2.size() << "\n";
-  }
+  void deal() { deck->dealCards(player1, player2); }
 
   void playHand() {
     // Roll attack numbers
@@ -49,40 +48,41 @@ public:
 
     rollAttackValues(p1Attack, p2Attack);
 
-    // Report rolled attack values
-    cout << "p1Attack == " << p1Attack << "\n";
-    cout << "p2Attack == " << p2Attack << "\n";
-    cout << "p1 Defense == " << player1[0].defense << "\n";
-    cout << "p2 Defense == " << player2[0].defense << "\n";
+    // Display card details
+    drawCards(p1Attack, p2Attack);
 
     // Fight
     if (p1Attack > player2[0].defense && p2Attack < player1[0].defense) {
       // Player 1 wins hand
-      cout << "Player1 wins hand!\n";
+      cout << "  Result: Player 1 wins hand!\n";
       player1.push_back(std::move(player2[0]));
       player2.erase(player2.begin());
     } else if (p2Attack > player1[0].defense && p1Attack < player2[0].defense) {
       // Player 2 wins hand
-      cout << "Player2 wins hand!\n";
+      cout << "  Result: Player 2 wins hand!\n";
       player2.push_back(std::move(player1[0]));
       player1.erase(player1.begin());
     } else {
       // Tie - remove both cards from game
-      cout << "Tie!\n";
+      cout << "  Result: Tie!\n";
       player1.erase(player1.begin());
       player2.erase(player2.begin());
     }
 
     // Report how many cards left
-    cout << "player1 card count == " << player1.size() << "\n";
-    cout << "player2 card count == " << player2.size() << "\n";
+    cout << "Player 1 card count = " << player1.size() << "\n";
+    cout << "Player 2 card count = " << player2.size() << "\n";
 
     // Check if either hand is empty
     if (player1.empty()) {
-      cout << "*** Player2 Wins! ***\n";
+      cout << "\n"
+           << SetTextColor("yellow") << "     *** PLAYER 1 WINS! ***\n\n"
+           << ResetTextColor();
       isGameOver = true;
     } else if (player2.empty()) {
-      cout << "*** Player1 Wins! ***\n";
+      cout << "\n"
+           << SetTextColor("yellow") << "     *** PLAYER 2 WINS! ***\n\n"
+           << ResetTextColor();
       isGameOver = true;
     }
   }
@@ -93,7 +93,35 @@ private:
   std::vector<Card> player2;
 
   void rollAttackValues(int &p1, int &p2) {
-    p1 = 5;
-    p2 = 6;
+    std::random_device rd;
+    std::mt19937 gen(rd());
+
+    std::uniform_int_distribution<int> distrib1(player1[0].minAttack,
+                                                player1[0].maxAttack);
+    p1 = distrib1(gen);
+
+    std::uniform_int_distribution<int> distrib2(player2[0].minAttack,
+                                                player2[0].maxAttack);
+    p2 = distrib2(gen);
+  }
+
+  void drawCards(int &p1Attack, int &p2Attack) {
+    cout << "          Player 1  \n";
+    cout << "        ------------\n";
+    cout << "        Card: " << player1[0].type << "\n";
+    cout << "  Min Attack: " << player1[0].minAttack << "\n";
+    cout << "  Max Attack: " << player1[0].maxAttack << "\n";
+    cout << "    Defense: " << player1[0].defense << "\n";
+    cout << "     *** Rolled Attack ***\n";
+    cout << "            *** " << p1Attack << " ***" << "\n\n";
+
+    cout << "          Player 2  \n";
+    cout << "        ------------\n";
+    cout << "-       Card: " << player2[0].type << "\n";
+    cout << "- Min Attack: " << player2[0].minAttack << "\n";
+    cout << "- Max Attack: " << player2[0].maxAttack << "\n";
+    cout << "-    Defense: " << player2[0].defense << "\n";
+    cout << "     *** Rolled Attack ***\n";
+    cout << "            *** " << p2Attack << " ***" << "\n\n";
   }
 };
