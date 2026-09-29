@@ -16,6 +16,8 @@ export string SetTextColor(string color) {
     return "\033[31m";
   } else if (color == "yellow") {
     return "\033[33m";
+  } else if (color == "cyan") {
+    return "\033[36m";
   } else {
     return "\033[32m"; // Default = green
   }

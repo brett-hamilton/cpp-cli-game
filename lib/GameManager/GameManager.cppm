@@ -25,14 +25,29 @@ public:
                   "| .------------.\n"
                   "| | .------------.\n"
                   "| | |            |\n"
-                  "| | |   WARISH   |   Press 'Enter'\n"
-                  "| | |        .   |      to Play\n"
-                  "| | |       / \\  |\n"
-                  "| | |      /  /  |\n"
-                  "| | |     /  /   |\n"
-                  "| | |  ._/__/_.  |\n"
-                  "| | |  |_._.__|  |\n"
-                  "`-| |   /_/      |\n"
+                  "| | |   " +
+                  SetTextColor("cyan") + "WARISH" + ResetTextColor() +
+                  "   |   " + SetTextColor("red") + "Press 'Enter'\n" +
+                  ResetTextColor() + "| | |        " + SetTextColor("yellow") +
+                  "." + ResetTextColor() + "   |      " + SetTextColor("red") +
+                  "to Play\n" + ResetTextColor() + "| | |       " +
+                  SetTextColor("yellow") + "/ \\" + ResetTextColor() +
+                  "  |\n"
+                  "| | |      " +
+                  SetTextColor("yellow") + "/  /" + ResetTextColor() +
+                  "  |\n"
+                  "| | |     " +
+                  SetTextColor("yellow") + "/  /" + ResetTextColor() +
+                  "   |\n"
+                  "| | |  " +
+                  SetTextColor("yellow") + "._/__/_." + ResetTextColor() +
+                  "  |\n"
+                  "| | |  " +
+                  SetTextColor("yellow") + "|_._.__|" + ResetTextColor() +
+                  "  |\n"
+                  "`-| |   " +
+                  SetTextColor("yellow") + "/_/" + ResetTextColor() +
+                  "      |\n"
                   "  `-|            |\n"
                   "    `------------`\n";
 
