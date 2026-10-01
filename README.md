@@ -3,6 +3,7 @@
 <img width="333" height="370" alt="image" src="https://github.com/user-attachments/assets/c5335e27-2d1f-4ec7-9535-d5285fc2c2b7" />
 <img width="315" height="388" alt="image" src="https://github.com/user-attachments/assets/7eccb17d-8e0d-4925-b2cf-9ad154df06fb" />
 
+[![CMake CI](https://github.com/brett-hamilton/cpp-cli-game/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/brett-hamilton/cpp-cli-game/actions/workflows/ci.yml)
 
 A simple terminal card game similar to War. The main purpose of this project is to practice C++ syntax and the CMake meta-build system.
 
