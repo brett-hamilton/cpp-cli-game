@@ -15,6 +15,9 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Configure CMake with Ninja
+      env:
+        CC: clang
+        CXX: clang++
       run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
 
     - name: Build project
