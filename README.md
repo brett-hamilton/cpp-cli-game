@@ -43,6 +43,6 @@ Step-by-step instructions to get your development environment running:
 
 ## Notes
 
-This is not a polished repo. The purpose is to create a C++ program without following a tutorial to familiarize myself with C++ syntax and patterns, along with learning CMake, while I go through the book [A Tour of C++ (3rd ed., Stroustrup)](https://www.stroustrup.com/Tour.html).
+This is not a polished repo. The purpose is to create a C++ program without following a tutorial, familiarize myself with C++ syntax and patterns, and learn the basics of CMake while I go through the book [A Tour of C++ (3rd ed., Stroustrup)](https://www.stroustrup.com/Tour.html).
 The game is bare bones and not that fun, but let's be honest: the classic War card game isn't that fun either. Perhaps at a later date I will revisit this repo and add things like improved UI, full ASCII art cards, improved ruleset, etc., but that is mostly an exercise in string
 manipulation and I want to continue learning modern C++ programming. Cheers!
